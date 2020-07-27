@@ -25,3 +25,14 @@
 |下载器中间件|获取网页-个性化部分|一般不用|
 |爬虫器中间件|解析网页-个性化部分|一般不用|
 
+### 3、Scrappy 安装以及目录结构
+scrapy安装：pip install scrapy
+|Scrapy目录结构|
+|-|-|
+|实现爬虫的Python文件|spider目录|
+|项目的设置文件|settings.py|
+|项目的配置文件|scrapy.cfg|
+|定义所爬取记录的数据结构|items.py|
+|编写爬虫的逻辑|pachong.py|
+|设置保持位置|pipelines.py|
+
