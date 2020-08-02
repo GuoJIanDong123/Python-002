@@ -1,1 +1,54 @@
-学习笔记
+## 异常捕获与处理
+### 异常的捕获示例
+- StopIteration 异常示例：
+```Python
+genumber = (i for i in range(0,2))
+print(next(genumber))
+print(next(genumber))
+try:
+    print(next(genumber))
+except StopIteration:
+    print('最后一个元素')
+```
+### 异常处理机制的原理
+- 异常也是一个类
+- 异常捕获的过程：
+   - 异常类把错误消息打包到一个对象
+   - 然后该对象会自动查找到调用栈
+   - 直到运行系统找到明确声明如何处理这些类异常的位置
+- 所有异常继承自BaseException
+- TraceBack显示了出错的位置，显示的顺序和异常信息对象传播的方向是相反的
+- 捕获异常可以使用try...except语法
+- try...except支持多重异常处理
+- 常见的异常类型主要有：
+   - LookupError 下的IndexError 和KeyError
+   - IOError
+   - NameError
+   - TypeError
+   - AttributeError
+   - ZeroDivisionError
+### 自定义异常
+```Python
+class UserInputError(Exception):
+    def __init__(self,ErrorInfo):
+        super().__init__(self,ErrorInfo)
+        self.errorinfo = ErrorInfo
+    def __str__(self):
+        return self.errorinfo
+ ```
+ ### 魔法方法
+ ```Python
+ class Open:
+  # 首先调用这个方法
+    def __enter__(self):
+        print('open')
+   # 最后调用这个方法
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        print("close")
+
+    def __call__(self):
+    # with 调用这个方法
+        pass
+with Open() as f:
+    pass
+ ```
