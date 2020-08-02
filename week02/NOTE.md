@@ -52,3 +52,18 @@ class UserInputError(Exception):
 with Open() as f:
     pass
  ```
+## Pmysql数据库处理
+
+- 创建connection
+- 获取cursor
+- CURD（查询并获取数据）
+- 关闭cursor
+- 关闭connection
+
+## 反爬虫：模拟浏览器的头部信息
+
+### 浏览器的基本行为
+- 带http头信息：如User-Agent,Referer等
+- 带cookies（包含用户名，密码验证信息）
+
+
