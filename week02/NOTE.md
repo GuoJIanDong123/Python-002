@@ -66,4 +66,13 @@ with Open() as f:
 - 带http头信息：如User-Agent,Referer等
 - 带cookies（包含用户名，密码验证信息）
 
+### 下载中间件
+- process_request(request,spider)
+   - request对象经过下载中间件会被调用，优先级高先调用
+- process_reponse（request,response,spider）
+   - response对象经过下载中间件会被调用，优先级高后调用
+- process_exception(request,exception,spider)
+   - process_response()和process_request()抛出异常时会被调用
+- from_crawl(cls,crawler)
+   - 使用crawl来创建中间器对象，并(必须)返回一个中间件对象
 
