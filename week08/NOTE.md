@@ -33,3 +33,51 @@
    - E-Enclosing function locals:外部嵌套函数的名字空间
    - G-Global(module)：函数定义所在模块(文件的名字空间)
    - B-Builtin(Python):Python 内置模块的名字空间
+
+### 四、函数
+#### 1、Lambda表达式
+   - Lambda只是表达式，不是所有的函数逻辑都能封装进去
+   - 例子 k = lambda x:x+1   print(k(1))
+   - Lambda表达式后面只能有一个表达式
+      - 实现简单函数的时候可以使用Lambda表达式替代
+      - 使用高阶函数的时候一般使用Lambda表达式替代
+ 
+#### 2、高阶函数
+   - 高阶：参数是函数，返回值是函数
+   - 常见的高阶函数：map,reduce,filter,apply
+   - apply在Python2.3中移除，reduce被放在functools包中
+   - 推导式和生成器表达式可以替代map和filter函数
+   
+#### 3、返回值
+   - 返回关键字
+      - return
+      - yield
+   - 返回的对象
+      - 可调用对象--闭包(装饰器)
+      
+ #### 4、装饰器
+    - 增强而不改变原有的函数
+    -装饰器强调函数的定义态而不是运行态
+、、、python
+
+  @decorate
+  def target():
+     print('dosomthing)
+     
+   def target():
+     print('do something')
+     
+   target = decorate(target)
+ 
+、、、
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
